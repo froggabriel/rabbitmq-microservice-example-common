@@ -1,8 +1,8 @@
 {
-  "name": "library",
+  "name": "app-common",
   "version": "1.0.0",
   "description": "",
-  "main": "utils.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
