@@ -28,7 +28,7 @@ module.exports = {
         return channel;
     },
 
-    publishToRabbit({channel, routingKey, exchange, eventEmmiter, handler, msg}) {
+    publish({channel, routingKey, exchange, eventEmmiter, handler, msg}) {
         const queue = routingKey;
         // assign random id to our message
         let id = getUniqueID();
