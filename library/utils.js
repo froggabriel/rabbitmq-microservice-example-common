@@ -11,7 +11,7 @@ function getUniqueID () {
 
 module.exports = {
 
-    async init({url, eventEmmiter}) {
+    async startRabbit({url, eventEmmiter}) {
         let channel = null;
         await amqp.connect(url) // when the connection is created...
             .then(conn => conn.createChannel()) // and when the channel is created...
@@ -28,7 +28,7 @@ module.exports = {
         return channel;
     },
 
-    sendMsg({channel, routingKey, exchange, eventEmmiter, handler, msg}) {
+    publishToRabbit({channel, routingKey, exchange, eventEmmiter, handler, msg}) {
         const queue = routingKey;
         // assign random id to our message
         let id = getUniqueID();
